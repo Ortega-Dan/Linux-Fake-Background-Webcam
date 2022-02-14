@@ -1,5 +1,22 @@
 # Linux-Fake-Background-Webcam
 
+### Ubuntu usage:
+Create the loopback camera
+```bash
+sudo modprobe v4l2loopback devices=1 exclusive_caps=1 video_nr=2 card_label="fake-cam"
+```
+List existing devices
+```bash
+v4l2-ctl --list-devices
+```
+Run fake camera
+```bash
+python3 fake.py --no-foreground -b /home/danort/Pictures/Wallpapers/retw.jpeg -w [chosenPhysicalCamera] -v [chosenFakeCamera]
+# eg: python3 fake.py --no-foreground -b /home/danort/Pictures/Wallpapers/retw.jpeg -w /dev/video2 -v /dev/video4
+```
+
+___
+
 ## Background
 Video conferencing software support for background blurring and background
 replacement under Linux is relatively poor. The Linux version of Microsoft
