@@ -1,18 +1,25 @@
 # Linux-Fake-Background-Webcam
 
 ### Ubuntu usage:
+Make sure requirements are installed
+```bash
+python3 -m pip install -U pip
+./install.sh
+```
 Create the loopback camera
 ```bash
 sudo modprobe v4l2loopback devices=1 exclusive_caps=1 video_nr=2 card_label="fake-cam"
 ```
-List existing devices
+List existing devices (optional: informational for next step)
 ```bash
 v4l2-ctl --list-devices
 ```
 Run fake camera
 ```bash
-python3 fake.py --no-foreground -b /home/danort/Pictures/Wallpapers/retw.jpeg -w [chosenPhysicalCamera] -v [chosenFakeCamera]
-# eg: python3 fake.py --no-foreground -b /home/danort/Pictures/Wallpapers/retw.jpeg -w /dev/video2 -v /dev/video4
+python3 fake.py --no-foreground --no-background -w [chosenPhysicalCamera] -v [chosenFakeCamera]
+# eg: python3 fake.py --no-foreground --no-background -w /dev/video0 -v /dev/video4
+# or
+# eg: python3 fake.py --no-foreground -b /home/danort/Pictures/Wallpapers/retw.jpeg -w /dev/video0 -v /dev/video4
 ```
 
 ___
