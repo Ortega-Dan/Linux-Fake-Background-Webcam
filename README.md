@@ -5,6 +5,8 @@ Make sure requirements are installed
 ```bash
 python3 -m pip install -U pip
 ./install.sh
+sudo apt install v4l2loopback-dkms
+sudo apt install v4l2loopback-utils
 ```
 Create the loopback camera
 ```bash
