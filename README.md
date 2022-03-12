@@ -19,7 +19,7 @@ v4l2-ctl --list-devices
 Run fake camera
 ```bash
 python3 fake.py --no-foreground --no-background -w [chosenPhysicalCamera] -v [chosenFakeCamera]
-# eg: python3 fake.py --no-foreground --no-background -w /dev/video0 -v /dev/video4
+# eg: python3 fake.py --no-foreground --no-background -w /dev/video0 -v /dev/video4 -W 640 -H 480
 # or
 # eg: python3 fake.py --no-foreground -b /home/danort/Pictures/Wallpapers/retw.jpeg -w /dev/video0 -v /dev/video4
 ```
