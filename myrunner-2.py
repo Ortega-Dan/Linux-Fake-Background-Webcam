@@ -15,7 +15,7 @@ camera = "NONE"
 while True:
     countLines += 1
     line = stream.readline()
-    if line.__contains__("Video Capture 4"):
+    if line.__contains__("Trust Webcam"):
         camera = stream.readline().strip()
         break
 
